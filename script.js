@@ -17,7 +17,6 @@ function addDetails() {
     const totalResults = studentList.length + studentScores.length
     if (totalResults > 0) {
         resultsBtn.classList.remove("hidden")
-        messageContainer.innerHTML = `${studentList}${studentScores}`
     }
     console.log(studentList)
     console.log(studentScores)
