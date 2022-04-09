@@ -14,7 +14,7 @@ resultsBtn.addEventListener("click", displayResults)
 function addDetails() {
     if (studentInput.value === "") {
         messageContainer.innerHTML = warning
-        const timer = setTimeout(removeWarning, 4000)
+        setTimeout(clearMessage, 3000)
         return false
     }
     studentList[i] = document.getElementById("student").value
@@ -34,6 +34,6 @@ function displayResults() {
     messageContainer.innerHTML = `${studentList}${studentScores}`
 }
 
-function removeWarning() {
-    messageContainer.classList.add("hidden")
+function clearMessage() {
+    messageContainer.innerHTML = ""
 }
