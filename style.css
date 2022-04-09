@@ -30,6 +30,7 @@
 
 .form-label {
     color: rgb(112, 108, 100);
+    margin-top: 0.5rem;
 }
 
 .form-input {
@@ -39,11 +40,15 @@
     background: rgb(245, 244, 242);
     padding: 8px 8px;
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    /* /*margin-bottom: 1rem;* */
 }
 
 input:focus {
     border-color: rgb(177, 172, 163)
+}
+
+.warning-message {
+    color: rgb(255, 66, 77);
 }
 
 .submit-btn {
@@ -55,12 +60,21 @@ input:focus {
 }
 
 .message-container {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
+    background:rgb(255, 66, 77);
+    width: 100%;
+    max-width: 400px;
+    min-height: 300px;
 }
 
 .hidden {
     display: none;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
 }

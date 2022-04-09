@@ -1,19 +1,26 @@
 const studentList = []
 const studentScores = []
 let i = 0
+
 const messageContainer = document.querySelector(".message-container")
 const submitBtn = document.querySelector("#submit")
 const resultsBtn = document.querySelector("#results")
 const form = document.querySelector(".score-form")
 const studentInput = document.querySelector("#student")
-const warning = `<p>INVALID</p>`
+const scoreInput = document.querySelector("#score")
+const warning = `<p>Invalid Input</p>`
+const formMessage = document.querySelector(".warning-message")
 
 submitBtn.addEventListener("click", addDetails)
 resultsBtn.addEventListener("click", displayResults)
 
 function addDetails() {
     if (studentInput.value === "") {
-        messageContainer.innerHTML = warning
+        formMessage.innerHTML = warning
+        setTimeout(clearMessage, 3000)
+        return false
+    } else if (scoreInput.value === "") {
+        formMessage.innerHTML = warning
         setTimeout(clearMessage, 3000)
         return false
     }
@@ -31,9 +38,18 @@ function addDetails() {
 }
 
 function displayResults() {
-    messageContainer.innerHTML = `${studentList}${studentScores}`
+    messageContainer.classList.remove("hidden")
+    messageContainer.innerHTML = `<p class="test">${studentList}<br></p>`
+    /*studentList.forEach((item) => {
+        let li = document.createElement("li")
+        li.innerText = item
+        messageContainer.appendChild(li)
+    })*/
 }
 
 function clearMessage() {
-    messageContainer.innerHTML = ""
+    formMessage.innerHTML = ""
 }
+
+// Figure out how to display each array item one by one vertically in two columns
+// Use css grid instead of flex
