@@ -39,12 +39,18 @@ function addDetails() {
 
 function displayResults() {
     messageContainer.classList.remove("hidden")
-    messageContainer.innerHTML = `<p class="test">${studentList}<br></p>`
-    /*studentList.forEach((item) => {
+    /*let test = ""
+    for (i = 0; i < studentList.length; i++) {
+        test = `<li>${studentList}<br></li>`
+        messageContainer.innerHTML = `<p class="test">${studentList}<br></p>`
+    }*/
+    /*test = `<li>${studentList}<br></li>`
+    messageContainer.innerHTML = test*/
+    studentList.forEach((item) => {
         let li = document.createElement("li")
         li.innerText = item
         messageContainer.appendChild(li)
-    })*/
+    })
 }
 
 function clearMessage() {
@@ -52,4 +58,5 @@ function clearMessage() {
 }
 
 // Figure out how to display each array item one by one vertically in two columns
+// The loop works but the logic is not correct
 // Use css grid instead of flex
